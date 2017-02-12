@@ -26,8 +26,8 @@ object app {
 
   def main(args: Array[String]): Unit = {
 
-    Logger.getLogger("org").setLevel(Level.WARN);
-    Logger.getLogger("akka").setLevel(Level.WARN);
+    Logger.getLogger("org").setLevel(Level.WARN)
+    Logger.getLogger("akka").setLevel(Level.WARN)
 
     val conf = new SparkConf().setAppName("Devon_Spark_Demo").setMaster("local[10]").set("spark.cassandra.connection.host", "172.16.143.138")
 
