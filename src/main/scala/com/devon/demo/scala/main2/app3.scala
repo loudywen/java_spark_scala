@@ -34,7 +34,11 @@ object app3 {
       ("mark@example.com", "see you tomorrow", 0.0),
       ("xyz@example.com", "save money", 1.0),
       ("top10@example.com", "low interest rate", 1.0),
-      ("marketing@example.com", "cheap loan", 1.0))).toDF("email", "message", "label")
+      ("marketing@example.com", "cheap loan", 1.0),
+      ("diwen@example.com", "I am diwen", 0.0),
+      ("ff@example.com", "free", 1.0)
+
+    )).toDF("email", "message", "label")
 
     training.show()
     // Configure an Spark machine learning pipeline, consisting of three stages: tokenizer, hashingTF, and lr.
@@ -56,7 +60,8 @@ object app3 {
       ("jain@example.com", "hope doing well"),
       ("caren@example.com", "want some money"),
       ("zhou@example.com", "secure loan"),
-      ("ted@example.com", "need loan"))).toDF("email", "message")
+      ("ted@example.com", "free account")
+    )).toDF("email", "message")
 
     // Make predictions on the new messages
     val prediction = model.transform(test).select("email", "message", "prediction")
